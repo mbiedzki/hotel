@@ -48,6 +48,7 @@ public class ReservationResource {
 		return roomEntityList.map(converter::convert);
 
 	}
+	
 
 	@RequestMapping(path = "/{roomId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<RoomEntity> getRoomById(@PathVariable Long roomId) {
