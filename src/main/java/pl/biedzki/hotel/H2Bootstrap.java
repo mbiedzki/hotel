@@ -15,10 +15,6 @@ public class H2Bootstrap implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		
-		
-		System.out.println("Bootstrapping data");
 		
 		roomRepository.save(new RoomEntity(405, "200"));
 		roomRepository.save(new RoomEntity(407, "250"));
@@ -26,10 +22,10 @@ public class H2Bootstrap implements CommandLineRunner {
 		
 		Iterable<RoomEntity> itr = roomRepository.findAll();
 		
-		System.out.println("Printing data");
+		System.out.println("Created the following rooms in H2 database :");
 		
 		for(RoomEntity room : itr) {
-			System.out.println(room.getRoomNumber());
+			System.out.println(room);
 		}
 	}
 

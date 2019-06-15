@@ -6,17 +6,18 @@ import org.springframework.stereotype.Component;
 import pl.biedzki.hotel.entity.RoomEntity;
 import pl.biedzki.hotel.model.Links;
 import pl.biedzki.hotel.model.Self;
-import pl.biedzki.hotel.model.response.ReservationResponse;
+import pl.biedzki.hotel.model.response.ReservableRoomResponse;
 import pl.biedzki.hotel.rest.ResourceConstants;
 
 @Component
-public class RoomEntityToReservationResponseConverter implements Converter<RoomEntity, ReservationResponse> {
+public class RoomEntityToReservableRoomResponseConverter implements Converter<RoomEntity, ReservableRoomResponse> {
 
 	@Override
-	public ReservationResponse convert(RoomEntity source) {
-		// TODO Auto-generated method stub
+	public ReservableRoomResponse convert(RoomEntity source) {
+	 
 		
-		ReservationResponse reservationResponse = new ReservationResponse();
+		ReservableRoomResponse reservationResponse = new ReservableRoomResponse();
+		reservationResponse.setId(source.getId());
 		reservationResponse.setRoomNumber(source.getRoomNumber());
 		reservationResponse.setPrice(Integer.valueOf(source.getPrice()));
 		
